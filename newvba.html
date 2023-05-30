@@ -1,0 +1,41 @@
+Sub GenerateSignatures()
+    
+    ' Define the HTML signature template
+    Dim htmlTemplate As String
+    htmlTemplate = "<table>" & _
+        "<tr>" & _
+            "<td><img src='https://www.dropbox.com/s/cj0wpmsuhn2ddoe/Approved-04.png?raw=1' style='height: 200px;' alt=''></td>" & _
+            "<td>" & _
+                "<table>" & _
+                    "<tr>" & _
+                        "<td>{{employee_name}}</td>" & _
+                    "</tr>" & _
+                "</table>" & _
+                "<table>" & _
+                    "<tr>" & _
+                        "<td>{{employee_post}}</td>" & _
+                        "<td><a href='{{linkedin_url}}' target='_blank'><img src='https://www.dropbox.com/s/niejjnlt9jwpmn3/Linkedin.png?raw=1' style='height: 20px;' alt=''></a></td>" & _
+                        "<td><a href='{{twitter_url}}' target='_blank'><img src='https://www.dropbox.com/s/m2snkghpaenoplo/twitter-logo.png?raw=1' style='height: 20px;' alt=''></a></td>" & _
+                    "</tr>" & _
+                "</table>" & _
+                "<table>" & _
+                    "<tr>" & _
+                        "<td><a href='tel:{{employee_phone}}'><img src='https://www.dropbox.com/s/9b54vdi9f90iqlh/call.png?raw=1' style='height: 20px;' alt=''><span>{{employee_phone}}</span></a></td>" & _
+                        "<td><a href='mailto:{{employee_email}}'><img src='https://www.dropbox.com/s/r9bijd80obeg8pn/web_mail.png?raw=1' style='height: 20px;' alt=''><span>{{employee_email}}</span></a></td>" & _
+                    "</tr>" & _
+                "</table>" & _
+                "<table>" & _
+                    "<tr>" & _
+                        "<td><img src='https://www.dropbox.com/s/cxu18t230txsdz8/ISO-IEC%2027001%5B197%5D.png?raw=1' style='height: 100px; width: 100%;' alt=''></td>" & _
+                        "<td><img src='https://www.dropbox.com/s/cxu18t230txsdz8/ISO-IEC%2027001%5B197%5D.png?raw=1' style='height: 100px; width: 100%;' alt=''></td>" & _
+                        "<td><img src='https://www.dropbox.com/s/18bkoqq396o57ou/SOC2_Logo_Revised_1_.591b2acad61e2.png?raw=1' style='height: 100px; width: 100%;' alt=''></td>" & _
+                    "</tr>" & _
+                "</table>" & _
+            "</td>" & _
+        "</tr>" & _
+    "</table>"
+    
+    ' Define the employee data as an array of dictionaries
+    Dim employees(1 To 2) As Object ' Update the size as needed
+    Set employees(1) = CreateObject("Scripting.Dictionary")
+    employees(

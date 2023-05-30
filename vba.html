@@ -1,0 +1,117 @@
+<!-- Sub GenerateEmailSignatures()
+    Dim ws As Worksheet
+    Dim rng As Range
+    Dim employeeRange As Range
+    Dim employeeCell As Range
+    Dim name As String
+    Dim post As String
+    Dim url As String
+    Dim signature As String
+    Dim rowCounter As Long
+    
+    ' Set the worksheet and range where the employee data is stored
+    Set ws = ThisWorkbook.Worksheets("Sheet1") ' Replace "Sheet1" with the actual sheet name
+    Set employeeRange = ws.Range("A2:C51") ' Replace "A2:C51" with the actual range of employee data
+    
+    ' Loop through each employee in the range
+    For Each employeeCell In employeeRange
+        ' Get the values for name, post, and url from the respective columns
+        name = employeeCell.Offset(0, 0).Value
+        post = employeeCell.Offset(0, 1).Value
+        url = employeeCell.Offset(0, 2).Value
+        
+        ' Generate the email signature HTML code using the variables
+        signature = "<table>" & _
+                    "<tr>" & _
+                    "<td><img src=""https://www.dropbox.com/s/cj0wpmsuhn2ddoe/Approved-04.png?raw=1"" style=""height: 200px;"" alt=""""></td>" & _
+                    "<td>" & _
+                    "<table>" & _
+                    "<tr>" & _
+                    "<td>" & name & "</td>" & _
+                    "</tr>" & _
+                    "</table>" & _
+                    "<table>" & _
+                    "<tr>" & _
+                    "<td>" & post & "</td>" & _
+                    "<td><a href=""" & url & """ target=""_blank""><img src=""https://www.dropbox.com/s/niejjnlt9jwpmn3/Linkedin.png?raw=1"" style=""height: 20px;"" alt=""""></a></td>" & _
+                    "<td><a href=""twitter.com/esentry_mssp"" target=""_blank""><img src=""https://www.dropbox.com/s/m2snkghpaenoplo/twitter-logo.png?raw=1"" style=""height: 20px;"" alt=""""></a></td>" & _
+                    "</tr>" & _
+                    "</table>" & _
+                    "<table>" & _
+                    "<tr>" & _
+                    "<td><a href=""tel:+1234567890""><img src=""https://www.dropbox.com/s/9b54vdi9f90iqlh/call.png?raw=1"" style=""height: 20px;"" alt=""""><span>+234 70 8854 3428</span></a></td>" & _
+                    "<td><a href=""mailto:blessings@essentry.io""><img src=""https://www.dropbox.com/s/r9bijd80obeg8pn/web_mail.png?raw=1"" style=""height: 20px;"" alt=""""><span>blessings@essentry.io</span></a></td>" & _
+                    "</tr>" & _
+                    "</table>" & _
+                    "<table>" & _
+                    "<tr>" & _
+                    "<td><img src=""https://www.dropbox.com/s/cxu18t230txsdz8/ISO-IEC%2027001%5B197%5D.png?raw=1"" style=""height: 
+                        To convert the name, post, and URL into VBA variables that can iterate over a list of 50 employees in Excel, you can use the following VBA code:
+                        
+                        vba
+                        Copy code -->
+                        Sub GenerateEmailSignatures()
+                            Dim ws As Worksheet
+                            Dim rng As Range
+                            Dim employeeRange As Range
+                            Dim employeeCell As Range
+                            Dim name As String
+                            Dim post As String
+                            Dim url As String
+                            Dim signature As String
+                            Dim rowCounter As Long
+                            
+                            ' Set the worksheet and range where the employee data is stored
+                            Set ws = ThisWorkbook.Worksheets("Sheet1") ' Replace "Sheet1" with the actual sheet name
+                            Set employeeRange = ws.Range("A2:C51") ' Replace "A2:C51" with the actual range of employee data
+                            
+                            ' Loop through each employee in the range
+                            For Each employeeCell In employeeRange
+                                ' Get the values for name, post, and url from the respective columns
+                                name = employeeCell.Offset(0, 0).Value
+                                post = employeeCell.Offset(0, 1).Value
+                                url = employeeCell.Offset(0, 2).Value
+                                
+                                ' Generate the email signature HTML code using the variables
+                                signature = "<table>" & _
+                                            "<tr>" & _
+                                            "<td><img src=""https://www.dropbox.com/s/cj0wpmsuhn2ddoe/Approved-04.png?raw=1"" style=""height: 200px;"" alt=""""></td>" & _
+                                            "<td>" & _
+                                            "<table>" & _
+                                            "<tr>" & _
+                                            "<td>" & name & "</td>" & _
+                                            "</tr>" & _
+                                            "</table>" & _
+                                            "<table>" & _
+                                            "<tr>" & _
+                                            "<td>" & post & "</td>" & _
+                                            "<td><a href=""" & url & """ target=""_blank""><img src=""https://www.dropbox.com/s/niejjnlt9jwpmn3/Linkedin.png?raw=1"" style=""height: 20px;"" alt=""""></a></td>" & _
+                                            "<td><a href=""twitter.com/esentry_mssp"" target=""_blank""><img src=""https://www.dropbox.com/s/m2snkghpaenoplo/twitter-logo.png?raw=1"" style=""height: 20px;"" alt=""""></a></td>" & _
+                                            "</tr>" & _
+                                            "</table>" & _
+                                            "<table>" & _
+                                            "<tr>" & _
+                                            "<td><a href=""tel:+1234567890""><img src=""https://www.dropbox.com/s/9b54vdi9f90iqlh/call.png?raw=1"" style=""height: 20px;"" alt=""""><span>+234 70 8854 3428</span></a></td>" & _
+                                            "<td><a href=""mailto:blessings@essentry.io""><img src=""https://www.dropbox.com/s/r9bijd80obeg8pn/web_mail.png?raw=1"" style=""height: 20px;"" alt=""""><span>blessings@essentry.io</span></a></td>" & _
+                                            "</tr>" & _
+                                            "</table>" & _
+                                            "<table>" & _
+                                            "<tr>" & _
+                                            "<td><img src=""https://www.dropbox.com/s/cxu18t230txsdz8/ISO-IEC%2027001%5B197%5D.png?raw=1"" style=""height: 
+                        100px; width: 100%;"" alt=""""></td>" & _
+                        "<td><img src=""https://www.dropbox.com/s/cxu18t230txsdz8/ISO-IEC%2027001%5B197%5D.png?raw=1"" style=""height: 100px; width: 100%;"" alt=""""></td>" & _
+                        "<td><img src=""https://www.dropbox.com/s/18bkoqq396o57ou/SOC2_Logo_Revised_1_.591b2acad61e2.png?raw=1"" style=""height: 100px; width: 100%;"" alt=""""></td>" & _
+                        "</tr>" & _
+                        "</table>" & _
+                        "</td>" & _
+                        "</tr>" & _
+                        "</table>"
+
+                        ' Write the signature to a cell in the worksheet
+                        rowCounter = employeeCell.Row
+                        ws.Cells(rowCounter, 4).Value = signature ' Replace "4" with the column number where you want to write the signature
+                        
+                        ' Optional: Adjust the rowCounter to match the target column where you want to write the next signature
+                        ' rowCounter = rowCounter + 1
+                    Next employeeCell
+                    
